@@ -4,14 +4,16 @@ import time
 
 
 # 生成带年月日时分秒的时间
+# 2021年02月22日10时45分48秒
 def get_time_date():
     dateline = datetime.datetime.now().strftime('%Y年%m月%d日%H时%M分%S秒')
     return dateline
 
 
 # 生成带年月日时分秒的时间
-def get_weekChinese_from_str(datestring):
-    day = datetime.datetime.strptime(datestring, '%Y年%m月%d日%H时%M分%S秒').weekday()
+# 2021-02-22 10:45:48.054009
+def get_weekChinese_from_str(string):
+    day = datetime.datetime.strptime(string, '%Y年%m月%d日%H时%M分%S秒').weekday()
     week_day_dict = {
         0: '周一',
         1: '周二',
@@ -24,8 +26,8 @@ def get_weekChinese_from_str(datestring):
     return week_day_dict[day]
 
 
-def get_weekChinese_from_date(datedate):
-    day = datedate.weekday()
+def get_weekChinese_from_date(date):
+    day = date.weekday()
     week_day_dict = {
         0: '周一',
         1: '周二',
